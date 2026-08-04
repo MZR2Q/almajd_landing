@@ -95,7 +95,7 @@ nav.links a:hover,nav.links a.on{color:var(--brand);background:color-mix(in srgb
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:none;border-radius:12px;padding:12px 24px;font-weight:800;font-size:.95rem;transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
-.btn-gold{background:linear-gradient(135deg,var(--coral),var(--pink));color:#fff;box-shadow:0 8px 22px -8px color-mix(in srgb,var(--gold) 65%,transparent)}
+.btn-gold{background:linear-gradient(135deg,var(--coral),var(--gold-strong));color:#fff;box-shadow:0 8px 22px -8px color-mix(in srgb,var(--gold) 65%,transparent)}
 .btn-ghost{background:transparent;color:var(--on-hero);border:1.5px solid color-mix(in srgb,var(--on-hero) 40%,transparent)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 .btn-outline{background:#fff;color:var(--brand);border:1.5px solid color-mix(in srgb,var(--brand) 45%,var(--line))}
@@ -110,12 +110,10 @@ nav.links a:hover,nav.links a.on{color:var(--brand);background:color-mix(in srgb
 @media(max-width:640px){
   .nav{min-height:64px;gap:10px}
   .cart-btn{display:none}
-  .cta-zone .btn-gold{padding:9px 15px;font-size:.84rem}
   .logo .lockup{height:40px}
 }
 @media(max-width:420px){
   .logo .lockup{height:34px}
-  .cta-zone .btn-gold{padding:8px 12px;font-size:.8rem}
   .burger{width:40px;height:40px}
 }
 
@@ -271,6 +269,10 @@ section.sec{padding-block:84px}
   .file .acts{width:100%;justify-content:flex-end}
 }
 
+.gov-empty{display:flex;flex-direction:column;align-items:center;gap:10px;padding:60px 20px;color:var(--ink-2);text-align:center}
+.gov-empty svg{color:var(--line)}
+.gov-empty p{font-weight:800;font-size:.9rem}
+
 /* ===== المشاريع ===== */
 .filter-bar{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap}
 .chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:999px;padding:8px 20px;font-weight:800;font-size:.85rem;transition:.18s}
@@ -318,7 +320,7 @@ section.sec{padding-block:84px}
 }
 
 /* البرامج والأخبار */
-.news-date{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;color:var(--pink);font-weight:800}
+.news-date{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;color:var(--brand);font-weight:800}
 /* فريم صورة فارغ (placeholder) */
 .ph{aspect-ratio:16/9;background:var(--ground-2);border-bottom:1px solid var(--line);display:grid;place-items:center;color:#BDBBCF}
 .ph svg{width:36px;height:36px}
@@ -359,7 +361,7 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
   .fab{bottom:16px;left:16px}
   .fab .donate{padding:12px 20px;font-size:.86rem}
 }
-.fab .donate{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--coral),var(--pink));color:#fff;border:none;border-radius:999px;padding:14px 26px;font-weight:800;font-size:.95rem;box-shadow:0 14px 34px -8px color-mix(in srgb,var(--gold) 70%,transparent);transition:transform .2s}
+.fab .donate{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--coral),var(--gold-strong));color:#fff;border:none;border-radius:999px;padding:14px 26px;font-weight:800;font-size:.95rem;box-shadow:0 14px 34px -8px color-mix(in srgb,var(--gold) 70%,transparent);transition:transform .2s}
 .fab .donate:hover{transform:translateY(-3px) scale(1.03)}
 .to-top{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink-2);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.25s}
 .to-top.show{opacity:1;pointer-events:auto}
@@ -455,10 +457,6 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
       <a class="cart-btn" href="https://www.almajd.org.sa/checkout/" target="_blank" rel="noopener" aria-label="سلة التبرعات">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
         <span class="lbl num">0 ر.س</span>
-      </a>
-      <a class="btn btn-gold" href="https://www.almajd.org.sa/projects/" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21S3 14.5 3 8.7A5 5 0 0 1 12 5.6 5 5 0 0 1 21 8.7C21 14.5 12 21 12 21Z"/></svg>
-        تبرع الآن
       </a>
       <button class="burger" id="burger" aria-label="فتح القائمة" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
