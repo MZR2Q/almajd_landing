@@ -67,7 +67,7 @@ const DOC_FOLDERS = [
 
 الخطوط: **Reem Kufi** للعناوين، **Cairo** للنصوص. وايت مود ثابت، RTL بالكامل.
 
-أزرار التبرع توجّه لمتجر التبرع الإلكتروني: `almajd.org.sa/projects/`
+أزرار التبرع توجّه لمتجر التبرع الإلكتروني: `https://almajdyouth.com/`
 
 ## النشر على GitHub Pages
 
