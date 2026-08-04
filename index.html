@@ -223,32 +223,34 @@ section.sec{padding-block:84px}
 
 /* ===== الحوكمة والشفافية ===== */
 .gov{position:relative}
-.gov-frame{display:grid;grid-template-columns:270px minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg)}
-.gov-side{background:var(--ground-2);border-inline-end:1px solid var(--line);color:var(--ink);padding:30px 0;display:flex;flex-direction:column}
+.gov-frame{display:grid;grid-template-columns:300px minmax(0,1fr);align-items:start;gap:0;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.gov-side{background:var(--ground-2);border-inline-end:1px solid var(--line);color:var(--ink);padding:26px 0;display:flex;flex-direction:column;align-self:stretch}
 .gov-side .hd{padding-inline:24px;margin-bottom:18px}
 .gov-side .hd b{font-family:'Reem Kufi','Cairo',sans-serif;font-size:1.1rem;color:var(--brand)}
 .gov-side .hd p{font-size:.78rem;color:var(--ink-2);margin-top:4px}
-.gov-tab{display:flex;align-items:center;gap:12px;padding:14px 24px;background:none;border:none;color:var(--ink-2);font-weight:700;font-size:.92rem;text-align:right;border-inline-start:3px solid transparent;transition:.18s;width:100%}
+.gov-tab{display:flex;align-items:center;gap:11px;padding:12px 22px;background:none;border:none;color:var(--ink-2);font-weight:700;font-size:.86rem;line-height:1.5;text-align:right;border-inline-start:3px solid transparent;transition:.18s;width:100%}
 .gov-tab .n{margin-inline-start:auto;background:color-mix(in srgb,var(--brand) 10%,transparent);color:var(--brand);border-radius:999px;font-size:.7rem;padding:1px 9px;font-weight:800;font-variant-numeric:tabular-nums}
 .gov-tab:hover{color:var(--brand);background:color-mix(in srgb,var(--brand) 5%,transparent)}
 .gov-tab[aria-selected="true"]{color:var(--brand);background:#fff;border-inline-start-color:var(--gold);box-shadow:0 2px 10px -4px rgba(46,39,88,.12)}
 .gov-tab svg{flex-shrink:0;opacity:.85}
-.gov-main{padding:30px 30px 34px;min-height:430px}
+.gov-main{padding:28px 28px 32px;min-height:430px}
 .gov-main .gm-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:6px;flex-wrap:wrap}
 .gov-main h3{font-size:1.25rem}
 .gov-main .gm-head p{color:var(--ink-2);font-size:.86rem;width:100%}
-.file-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.file-list{display:flex;flex-direction:column;gap:11px;margin-top:18px;max-height:520px;overflow-y:auto;padding-inline-end:4px}
+.file-list::-webkit-scrollbar{width:7px}
+.file-list::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+.file-list::-webkit-scrollbar-thumb:hover{background:#C9C7DC}
 .file{
-  display:flex;align-items:center;gap:16px;background:var(--ground-2);
-  border:1px solid var(--line);border-radius:14px;padding:14px 18px;transition:.2s;
+  display:flex;align-items:center;gap:14px;background:var(--ground-2);
+  border:1px solid var(--line);border-radius:14px;padding:13px 16px;transition:.2s;
 }
-.file:hover{border-color:color-mix(in srgb,var(--brand) 40%,var(--line));box-shadow:var(--shadow);transform:translateX(-3px)}
-.file .fic{width:46px;height:46px;border-radius:12px;background:color-mix(in srgb,var(--urgent) 10%,transparent);color:var(--urgent);display:grid;place-items:center;flex-shrink:0;font-weight:800;font-size:.62rem;letter-spacing:.05em}
+.file:hover{border-color:color-mix(in srgb,var(--brand) 42%,var(--line));box-shadow:var(--shadow);transform:translateX(-3px)}
+.file .fic{width:42px;height:42px;border-radius:11px;background:color-mix(in srgb,var(--brand) 10%,transparent);color:var(--brand);display:grid;place-items:center;flex-shrink:0}
 .file .meta{min-width:0;flex:1}
-.file .meta b{display:block;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.file .meta span{font-size:.76rem;color:var(--ink-2);display:flex;gap:14px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
-.file .acts{display:flex;gap:8px;flex-shrink:0}
-.fbtn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:10px;padding:8px 14px;font-weight:800;font-size:.78rem;transition:.18s}
+.file .meta b{display:block;font-size:.9rem;font-weight:700;line-height:1.55}
+.file .acts{flex-shrink:0}
+.fbtn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:var(--card);color:var(--ink-2);border-radius:10px;padding:8px 15px;font-weight:800;font-size:.78rem;transition:.18s;white-space:nowrap}
 .fbtn:hover{color:var(--brand);border-color:var(--brand)}
 .fbtn.dl{background:var(--brand);border-color:var(--brand);color:#fff}
 .fbtn.dl:hover{background:var(--brand-deep);border-color:var(--brand-deep);color:#fff}
@@ -263,10 +265,10 @@ section.sec{padding-block:84px}
   .gov-tab .n{margin-inline-start:6px}
   .gov-main{padding:22px 16px;min-height:0}
   .gov-main h3{font-size:1.1rem}
-  .file{flex-wrap:wrap;gap:12px;padding:13px 14px}
-  .file .fic{width:40px;height:40px}
-  .file .meta b{white-space:normal;font-size:.88rem;line-height:1.5}
-  .file .acts{width:100%;justify-content:flex-end}
+  .file{flex-wrap:wrap;gap:12px;padding:12px 14px}
+  .file .fic{width:36px;height:36px}
+  .file .meta b{font-size:.85rem}
+  .file .acts{width:100%;display:flex;justify-content:flex-end}
 }
 
 .gov-empty{display:flex;flex-direction:column;align-items:center;gap:10px;padding:60px 20px;color:var(--ink-2);text-align:center}
@@ -401,9 +403,8 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
   .gov-main h3{font-size:.98rem}
   .gov-main .gm-head p{font-size:.74rem}
   .file{padding:10px 12px;gap:10px;border-radius:11px}
-  .file .fic{width:34px;height:34px;font-size:.52rem;border-radius:9px}
-  .file .meta b{font-size:.8rem;line-height:1.45}
-  .file .meta span{font-size:.66rem;gap:10px}
+  .file .fic{width:32px;height:32px;border-radius:9px}
+  .file .meta b{font-size:.79rem;line-height:1.45}
   .fbtn{padding:6px 12px;font-size:.7rem;border-radius:8px}
   .file-list{gap:9px;margin-top:14px}
   .cta-banner h2{font-size:1.25rem}
@@ -561,70 +562,9 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
     <div class="gov-frame rv">
       <aside class="gov-side">
         <div class="hd"><b>مركز الوثائق</b><p>تصفّح الملفات حسب التصنيف</p></div>
-        <div class="tabs" role="tablist" aria-label="تصنيفات الوثائق">
-          <button class="gov-tab" role="tab" aria-selected="true" data-tab="g1">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 7l3-4 3 4M3 7a3 3 0 1 0 6 0M15 7l3-4 3 4M15 7a3 3 0 1 0 6 0M8 21h8"/></svg>
-            أدلة الحوكمة<span class="n">3</span>
-          </button>
-          <button class="gov-tab" role="tab" aria-selected="false" data-tab="g2">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-            اللوائح والسياسات<span class="n">4</span>
-          </button>
-          <button class="gov-tab" role="tab" aria-selected="false" data-tab="g3">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
-            محاضر الاجتماعات<span class="n">3</span>
-          </button>
-          <button class="gov-tab" role="tab" aria-selected="false" data-tab="g4">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            التقارير السنوية<span class="n">2</span>
-          </button>
-          <button class="gov-tab" role="tab" aria-selected="false" data-tab="g5">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            الشفافية المالية<span class="n">2</span>
-          </button>
-        </div>
+        <div class="tabs" id="govTabs" role="tablist" aria-label="تصنيفات الوثائق"></div>
       </aside>
-      <div class="gov-main">
-        <div class="gov-pane" id="g1">
-          <div class="gm-head"><h3>أدلة الحوكمة</h3><p>الأدلة التنظيمية المعتمدة من مجلس الإدارة والجمعية العمومية</p></div>
-          <div class="file-list">
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>دليل الحوكمة المؤسسية — الإصدار الثاني</b><span><i>تاريخ النشر: 1447/03/12هـ</i><i>2.4 MB</i><i>412 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>دليل الصلاحيات والمسؤوليات</b><span><i>تاريخ النشر: 1446/11/02هـ</i><i>1.1 MB</i><i>238 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>دليل لجان مجلس الإدارة</b><span><i>تاريخ النشر: 1446/08/20هـ</i><i>860 KB</i><i>194 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-          </div>
-        </div>
-        <div class="gov-pane" id="g2" hidden>
-          <div class="gm-head"><h3>اللوائح والسياسات</h3><p>السياسات المنظّمة لعمل الجمعية وعلاقاتها مع أصحاب المصلحة</p></div>
-          <div class="file-list">
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>اللائحة الأساسية للجمعية</b><span><i>تاريخ النشر: 1447/01/05هـ</i><i>1.8 MB</i><i>521 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>سياسة تعارض المصالح</b><span><i>تاريخ النشر: 1446/12/18هـ</i><i>640 KB</i><i>176 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>سياسة خصوصية البيانات وحمايتها</b><span><i>تاريخ النشر: 1446/10/09هـ</i><i>720 KB</i><i>203 تنزيلات</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>سياسة الإبلاغ عن المخالفات وحماية المبلّغين</b><span><i>تاريخ النشر: 1446/09/25هـ</i><i>580 KB</i><i>149 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-          </div>
-        </div>
-        <div class="gov-pane" id="g3" hidden>
-          <div class="gm-head"><h3>محاضر الاجتماعات</h3><p>محاضر اجتماعات مجلس الإدارة والجمعية العمومية المعتمدة</p></div>
-          <div class="file-list">
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>محضر اجتماع الجمعية العمومية — الاجتماع السنوي 1447هـ</b><span><i>تاريخ النشر: 1447/02/28هـ</i><i>1.3 MB</i><i>287 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>محضر اجتماع مجلس الإدارة — الاجتماع الرابع 1446هـ</b><span><i>تاريخ النشر: 1446/12/10هـ</i><i>940 KB</i><i>162 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>محضر اجتماع مجلس الإدارة — الاجتماع الثالث 1446هـ</b><span><i>تاريخ النشر: 1446/09/14هـ</i><i>880 KB</i><i>141 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-          </div>
-        </div>
-        <div class="gov-pane" id="g4" hidden>
-          <div class="gm-head"><h3>التقارير السنوية</h3><p>التقارير الإدارية والتشغيلية عن أعمال الجمعية</p></div>
-          <div class="file-list">
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>التقرير السنوي 1446هـ</b><span><i>تاريخ النشر: 1447/01/20هـ</i><i>6.2 MB</i><i>634 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>التقرير السنوي 1445هـ</b><span><i>تاريخ النشر: 1446/01/16هـ</i><i>5.7 MB</i><i>892 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-          </div>
-        </div>
-        <div class="gov-pane" id="g5" hidden>
-          <div class="gm-head"><h3>الشفافية المالية</h3><p>القوائم المالية المدققة وتقارير المراجع الخارجي</p></div>
-          <div class="file-list">
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>القوائم المالية المدققة — السنة المالية 1446هـ</b><span><i>تاريخ النشر: 1447/02/05هـ</i><i>3.1 MB</i><i>418 تنزيلاً</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-            <div class="file"><span class="fic">PDF</span><span class="meta"><b>تقرير المراجع الخارجي 1446هـ</b><span><i>تاريخ النشر: 1447/02/05هـ</i><i>1.6 MB</i><i>305 تنزيلات</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
-          </div>
-        </div>
-      </div>
+      <div class="gov-main" id="govMain"></div>
     </div>
   </div>
 </section>
@@ -854,14 +794,222 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
   document.getElementById('scrim').addEventListener('click',function(){toggleDrawer(false)});
   drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggleDrawer(false)})});
 
-  /* تبويبات الحوكمة */
-  var tabs=document.querySelectorAll('.gov-tab');
+  /* ═══════════ مركز الوثائق — يُبنى من الدكشنري أدناه ═══════════
+     لإضافة مجلد: اكتب "اسم المجلد": "رابط المجلد" داخل items للتصنيف المناسب
+     لإضافة تصنيف: انسخ كتلة { name, desc, icon, items } كاملة */
+
+const DOC_FOLDERS = [
+  {
+    "name": "اللائحة الأساسية والتأسيس",
+    "desc": "اللائحة الأساسية للجمعية وإجراءات تعديلها وشهادة التسجيل",
+    "icon": "scale",
+    "items": {
+      "اللائحة الأساسية": "https://drive.google.com/drive/folders/1u4M22Eqx_ZY5-1T2G3ujvns3sQn_yhmY",
+      "الإجراءات التي تمت عند التعديل على اللائحة الأساسية": "https://drive.google.com/drive/folders/1N660JHgtxgF0RC3eNWelv3C0kI4USr3l",
+      "شهادة تسجيل الجمعية": "https://drive.google.com/drive/folders/1v18miaHNiXomvKE2wPedIZGsgpDUWxAL"
+    }
+  },
+  {
+    "name": "الجمعية العمومية",
+    "desc": "سجل الأعضاء ومحاضر الاجتماعات والدعوات والمراسلات مع المركز الوطني",
+    "icon": "people",
+    "items": {
+      "سجل أعضاء الجمعية العمومية المحدث": "https://drive.google.com/drive/folders/1feA2IIgcfa016Y70oHbDEcUPdtmfHxzs",
+      "سجل محاضر اجتماعات الجمعية العمومية العادية": "https://drive.google.com/drive/folders/1ECv5gJPAn19Kaa2Kx60fLe-wSZbmwjLP",
+      "سجل محاضر اجتماعات الجمعية العمومية غير العادية": "https://drive.google.com/drive/folders/13iQFGFigGbpht6s0FZ1_V-4ick1Nd-xR",
+      "محتوى المراسلات بين الجمعية والمركز لتغيير أعضاء الجمعية العمومية أو مجلس الإدارة": "https://drive.google.com/drive/folders/1kiLujbcpx9W1eDSgMrfxotqo-Ru6RRrW",
+      "نسخ من الدعوات المرسلة للأعضاء لاجتماعات الجمعية العمومية": "https://drive.google.com/drive/folders/1E0_guF-lKGU4Sf89r0TvqJeL-UIOLY62",
+      "محتوى ارسال محاضر اجتماعات الجمعية العمومية للمركز الوطني": "https://drive.google.com/drive/folders/18hwtildWOLpJ9RuqWPsxtzTj8EHEGV_a",
+      "محتوى محاضر فرز أصوات اجتماعات الجمعية العمومية": "https://drive.google.com/drive/folders/1-0lKoDtECL23vKC1i5giYQP0n8UuriD4",
+      "محتوى الإنابة في اجتماعات الجمعية العمومية": "https://drive.google.com/drive/folders/1-0wF4vFrnkekmRdKcEDa68Tvt0lmfpHY",
+      "شهادات إفصاح أعضاء الجمعية العمومية عند تعارض المصالح": "https://drive.google.com/drive/folders/1-39jjERTychOJkQIz_uRE655ccRwDW6A",
+      "المراسلات والدعوات لاجتماعات الجمعية العمومية غير العادية": "https://drive.google.com/drive/folders/1-5NFJJcHU0ST0hFXUpo5qw43ky32jvUl",
+      "محتوى موافقة المركز الوطني على تنفيذ قرارات الجمعية العمومية غير العادية": "https://drive.google.com/drive/folders/1-K3k52msF_EM6BqT8757s1sK882uNX6W",
+      "آلية إدارة طلبات العضوية في الجمعية العمومية": "https://drive.google.com/drive/folders/1-Tbein-1qod4hsbbVxpAZ6vZRafBJJF0",
+      "بطاقات عضوية أعضاء الجمعية العمومية ومسح البطاقات المسلمة للأعضاء": "https://drive.google.com/drive/folders/1J8Ns77M1ryoyLnnHer7vsuHdp-XOmo5a"
+    }
+  },
+  {
+    "name": "مجلس الإدارة واللجان",
+    "desc": "أعضاء المجلس وصلاحياته وقرارات اللجان والانتخابات",
+    "icon": "board",
+    "items": {
+      "لائحة صلاحيات مجلس الإدارة والصالحيات الممنوحة للمجلس": "https://drive.google.com/drive/folders/10DSlPp5SL3VsdJf0Lx_lWvnWsJnUS8LW",
+      "قائمة بصالحيات المجلس ومدة التفويض": "https://drive.google.com/drive/folders/10DgD3BPlg4xKRwuNjYgUG58Eo1iIgFfN",
+      "تقارير متابعة ممارسة الصالحيات الممنوحة من مجلس الإدارة": "https://drive.google.com/drive/folders/10Oc4Lm4zoAlkDkqhjJxW2oF_yXvSjv_1",
+      "موافقة المركز الوطني على الصالحيات المالية": "https://drive.google.com/drive/folders/10QJtsDNQV3aN7QEiXjDv48t_0LOYpmhv",
+      "قائمة أعضاء مجلس الإدارة المحدثة ووظائفهم الرئيسية لهم والمدة المتاحة لهم": "https://drive.google.com/drive/folders/10TTHBA1QoODCjRfkxAtrMA0F-MRMlOub",
+      "قائمة أعضاء مجلس الإدارة المحدثة في الدورتين السابقتين": "https://drive.google.com/drive/folders/10eiZop4kYTeLRSMTUqxElaIRq7HASGhr",
+      "موافقة المركز الوطني على أعضاء مجلس الإدارة": "https://drive.google.com/drive/folders/10j-dcEj4sQy1YPBEbrdZwKtxcmLGcyfm",
+      "محتوى قائمة الإجراءات المتبعة لتعريف أعضاء مجلس الإدارة الجدد بعمل الجمعية": "https://drive.google.com/drive/folders/10zrsmmvh6QPZx8M9-8Vh9zR3og_oJU8s",
+      "موافقة المركز السابقة على المجلس الذي انتهت دورته أو الذي على وشك الانتهاء": "https://drive.google.com/drive/folders/11FOh1jXwNvXUMmCPWBySk4rvGkHUX5J4",
+      "قرار تشكيل لجنة الانتخابات": "https://drive.google.com/drive/folders/11J52aBWNDo_RrZOENKKM80PpHdUGrMBh",
+      "محاضر اجتماع لجنة الانتخابات مع مجلس الإدارة": "https://drive.google.com/drive/folders/11KAgl2Vl0qODnXJznGlKo_uMuZWAmUhv",
+      "قائمة المرشحين لعضوية المجلس الجديد": "https://drive.google.com/drive/folders/11P3O_-zja0CillHL6zQ-_RrS_RIzml6k",
+      "قائمة باللجان الدائمة والمؤقتة بالجمعية": "https://drive.google.com/drive/folders/1R17wS6q3-cRZ0egU0U0tZ84d4pvno6SD",
+      "محتوى قرارات تكوين اللجان وتحديد أعضائها واختصاصاتها": "https://drive.google.com/drive/folders/1AoHC9XVrHo_iJnI39m4iO-x9SrxpUK-P"
+    }
+  },
+  {
+    "name": "الإدارة التنفيذية والموارد البشرية",
+    "desc": "قرارات التعيين والعقود واللوائح والهيكل الوظيفي",
+    "icon": "user",
+    "items": {
+      "لائحة الموارد البشرية": "https://drive.google.com/drive/folders/1-xBZ-37zpNPZ_39h_aZr2ItOjWrj_h-p",
+      "الميثاق الأخلاقي الموقع من العاملين في الجمعية": "https://drive.google.com/drive/folders/104mS8Ky6bAwW5cGPf2DWOAHHjXR1twLs",
+      "قرار مجلس الإدارة بتعيين المديرالتنفيذي": "https://drive.google.com/drive/folders/11-wJMULa32U1fzX2q_zasHuEDOZbWXxe",
+      "عقد المدير التنفيذي": "https://drive.google.com/drive/folders/1118atUWXAZfW4he2gnzZYt2fkA-KvU6v",
+      "خطاب تعيين المحاسب للمركز الوطني": "https://drive.google.com/drive/folders/112aSU1BEhrO2BIQsyzjQnzzBxPkVNJGL",
+      "مؤهلات المشرف المالي (المدير المالي)": "https://drive.google.com/drive/folders/114IfFiOXTPyp9aruCpTqbVYrrJ8S2SFc",
+      "محتوى سجل التوظيف والوظائف الشاغرة والإعلان عنها": "https://drive.google.com/drive/folders/1L4Gp-RkOljlDCdj50orOrZbB6yxg01T1",
+      "الهيكل التنظيمي للوظائف المالية في الجمعية ضمن هيكل الجمعية المعتمد من مجلس الإدارة": "https://drive.google.com/drive/folders/18xbUDm0OZAUka4u-t-ii5_Tmm1pHRfCR",
+      "بطاقات الوصف الوظيفي للوظائف المالية": "https://drive.google.com/drive/folders/1mPHqEy2GfxTkUK8WrejT9-3jSkBVY1IA",
+      "لائحة وإجراءات الموارد البشرية": "https://drive.google.com/drive/folders/1lDrZfD2joJsBWoYczoAAAhSBqaVqLw_q"
+    }
+  },
+  {
+    "name": "السياسات واللوائح المعتمدة",
+    "desc": "سياسات الحوكمة المعتمدة وآليات العمل مع المستفيدين والمتطوعين",
+    "icon": "doc",
+    "items": {
+      "سياسة تعارض المصالح المعتمدة": "https://drive.google.com/drive/folders/1-adkDG9MCktPcIcFXQQL2c1vbWUhA6fN",
+      "سياسة الإبلاغ عن المخالفات وحماية مقدمي البالغات المعتمدة": "https://drive.google.com/drive/folders/1-bYAi_YtoGXVeUsLIlc7HObIvPrjFKhr",
+      "سياسة خصوصية البيانات المعتمدة": "https://drive.google.com/drive/folders/1-cy5UAzYwRKdAEF1HU9kSGGPqcMXQSN2",
+      "سياسة الاحتفاظ بالوثائق وإتلافها": "https://drive.google.com/drive/folders/1-gGF9uTcBrvTB7_3qZsTareYbxBDGv8s",
+      "سياسة جمع التبرعات المعتمدة": "https://drive.google.com/drive/folders/1-hPMatBFeIrxm43VVEp8xoImFos0lMNr",
+      "سياسة تنظيم العلاقة مع المستفيدين وتقديم الخدمات لهم": "https://drive.google.com/drive/folders/1-lVFOXggT8SzAbsV8XD04MtJVHdOs8Yy",
+      "آلية التأكد من استحقاق المستفيد للخدمة": "https://drive.google.com/drive/folders/1-p9xGhkY_GGb7qJxk6ln8E-AgXSTsPtN",
+      "آلية إدارة المتطوعين": "https://drive.google.com/drive/folders/1-tQ7eXhJNqCszMk6aUIrJDSPRqweIGS2",
+      "قائمة استلام الخدمات والمساعدات للمستفيدين": "https://drive.google.com/drive/folders/1lFZ3wpv2wHVvfCvuHDBVjUhT4Jm57TCB",
+      "لائحة وإجراءات اختيار المستفيدين": "https://drive.google.com/drive/folders/1qZXPmyw32IvEbVkYpxaa68yUW6fn_Pf3"
+    }
+  },
+  {
+    "name": "الشؤون المالية",
+    "desc": "اللوائح والأدلة المالية والمشتريات والاستثمار وتقارير الإشراف المالي",
+    "icon": "money",
+    "items": {
+      "التقارير الربعية المالية المعدة من المشرف المالي": "https://drive.google.com/drive/folders/1YWU0iFZrafikU9XrVflYExa4KQ91A7WU",
+      "صورة من التقارير الربعية المالية المعدة من المشرف المالي": "https://drive.google.com/drive/folders/1I0wBhrZi7-6gSeCD00PAei-EoM8j5DX5",
+      "موافقة المركز الوطني على جمع التبرعات": "https://drive.google.com/drive/folders/1be0eY91JYmTLCJdQf9gKkB-UfwOORwRr",
+      "محتوى قائمة العقارات والاستثمارات في ملكية الجمعية": "https://drive.google.com/drive/folders/17AWY-rQvViCfjkuj9I3Uk8GVCP5sE06P",
+      "لائحة السياسات المالية": "https://drive.google.com/drive/folders/13cMix-w6-jamSyalpFU5_mDppHgqrGAV",
+      "دليل الإجراءات المالي": "https://drive.google.com/drive/folders/1l7_oq0n4-hueOfn2I5P9AJQRUW-IA5L2",
+      "إجراءات التعامل مع المقبوضات": "https://drive.google.com/drive/folders/16KSbd73DMRLRHkbSQeEmutZmusnRtmCo",
+      "لائحة المشتريات": "https://drive.google.com/drive/folders/1PwCciqBgDBwty0c4myuDTTQxe-f6VLXF",
+      "سياسة الصرف للبرامج والأنشطة": "https://drive.google.com/drive/folders/11hWF60h507VPpw0wBXZmVFhqodUZryMR",
+      "تقارير مالية": "https://drive.google.com/drive/folders/18ADHnnOtMrLCPO6W_uvKR4HwzRCZkAaE",
+      "سياسة الاستثمار": "https://drive.google.com/drive/folders/1ngaeGW-cMAL1rIZDholGV9yqh1LWjRKn",
+      "لائحة وإجراءات التعاقد والمشتريات": "https://drive.google.com/drive/folders/1n74YuRPIHUxxh_YY59zuBZtPH8qLNvR7",
+      "لائحة وإجراءات متابعة النقد من المتبرع إلى المستفيد": "https://drive.google.com/drive/folders/1L8QBHjjFcKnsKms7zjfQLrKBT7pTYimW",
+      "لائحة وإجراءات شراء الأصول": "https://drive.google.com/drive/folders/1QPJpHLb-eJOqrgdQL94RCAqj3ZyGzhxg"
+    }
+  },
+  {
+    "name": "الرقابة الداخلية والمخاطر",
+    "desc": "نظام الرقابة والمراجع الداخلي وتقارير المتابعة ومكافحة غسل الأموال وتمويل الإرهاب",
+    "icon": "shield",
+    "items": {
+      "قرار تعيين أو تكليف المراجع الداخلي": "https://drive.google.com/drive/folders/1-MytqxDRifx9Uffx15F2Oibsjv2pLLao",
+      "محتوى نظام الرقابة الداخلي": "https://drive.google.com/drive/folders/1-Q_PJyuYfUXQWLFK9dtx9bkeFkEuXJzm",
+      "محتوى تقارير المتابعة والإشراف": "https://drive.google.com/drive/folders/1-XOO3m9YyYQCWpnv85zbZdJ-KsaET0pB",
+      "محتوى تقارير البرامج التوعوية الداخلية": "https://drive.google.com/drive/folders/10yVKfxdrOWP46bZopeORs-rBrpEnAIfL",
+      "تقارير تصحيح المخالفات إن وجدت": "https://drive.google.com/drive/folders/11P6e3Rrv28fcOiaMfjpNVB6tAmzY5ot9",
+      "تقارير عدم وجود أية مخالفات مالية أو إدارية أو فنية على الجمعية": "https://drive.google.com/drive/folders/11Qv4OBj-vbWkdvFleMC6-NERMW1yFooW",
+      "تقارير برامج وأنشطة تحديد وفهم مخاطر جرائم الإرهاب وتمويله وتقييمها وتوثيقها": "https://drive.google.com/drive/folders/1x-2oZEQnbtNoaB1jqm0koLdr8lVTPYGU",
+      "محتوى تقييم المخاطر المتأصلة والكامنة مطابقة مع عمل الجمعية": "https://drive.google.com/drive/folders/1AQEvTmeGzgy_wynn1LBPQvrX9M2KWbqm",
+      "قائمة السياسات والإجراءات المتعلقة بتدابير العناية الواجبة لمكافحة جرائم الإرهاب وتمويله": "https://drive.google.com/drive/folders/1MJh6Fdu8-8WKWe5yUG0p-3riLroNKEat",
+      "قائمة المؤشرات الدالة على وجود شبهة غسيل أموال": "https://drive.google.com/drive/folders/1v8hIZHZ0_WUvH8INIamBFDM2sZbNqzjN",
+      "قائمة السياسات والإجراءات عند الاشتباه في أن الأموال أو بعضها تمثل عمليات لها عالقة بغسل الأموال أو أنها سوف تستخدم في عمليات غسل الأموال": "https://drive.google.com/drive/folders/1vPHQgIanJba_YSCvJwHQ4v_XQyTeYrQt",
+      "تقارير البرامج التوعوية للعاملين في الجمعية": "https://drive.google.com/drive/folders/1wj2RdDTV5ibqlOp-UU8EJkfZta9-LVcv"
+    }
+  },
+  {
+    "name": "الخطط والتقارير السنوية",
+    "desc": "الخطة التشغيلية والتقارير السنوية للبرامج والقوائم المالية",
+    "icon": "chart",
+    "items": {
+      "الخطة التشغيلية للجمعية": "https://drive.google.com/drive/folders/1-4p8P16Zk00aCIS7piVla4sCGCzvXWOg",
+      "التقرير السنوي المفصل عن القوائم المالية": "https://drive.google.com/drive/folders/1d9CI98vSHrloPCTMMlajnMCBUMZhOPap",
+      "صورة من إرسال التقرير السنوي للمركز الوطني": "https://drive.google.com/drive/folders/1ykDTKj-l1ETqlrBiqLllaDsJyJEL26I2",
+      "التقرير السنوي لبرامج وأنشطة الجمعية المعتمد من الجمعية العمومية": "https://drive.google.com/drive/folders/11T3nwRgFBaXo2_5VyKHWWzichR4yUMR2"
+    }
+  },
+  {
+    "name": "الفروع والشراكات والأنشطة",
+    "desc": "فروع الجمعية ومكاتبها التعريفية وأنشطتها وشراكاتها الخارجية",
+    "icon": "globe",
+    "items": {
+      "قائمة فروع الجمعية داخل المملكة": "https://drive.google.com/drive/folders/11bKJEzaODBTjoLU_UNTCeDSRRAGqG84I",
+      "موافقة المركز الوطني على إنشاء الفروع داخل المملكة": "https://drive.google.com/drive/folders/11cRQKWSfQyJuXOv4VGhQZIOYN0iYFbGa",
+      "قائمة المكاتب التعريفية للجمعية": "https://drive.google.com/drive/folders/11ePBgMe7_aeLk_GjJDBJ3rJrmedzlZOi",
+      "محتوى قائمة الأنشطة التي تقوم بها المكاتب": "https://drive.google.com/drive/folders/1aUH9TRVBUBDdvX9jhKdkmf2CjuC05X2h",
+      "محتوى أنشطة الجمعية خارج نطاق الجمعية الإداري وموافقة المركز الوطني عليه": "https://drive.google.com/drive/folders/1gi0CiHopnq5_Skn9KlaeZpmsZpSqMkGR",
+      "قائمة الأنشطة والفعاليات مع دول أو منظمات أو مؤسسات دولية ووجود موافقة المركز الوطني عليه": "https://drive.google.com/drive/folders/1QnxyOz038PbTTJQgdmV32VL1Q09ZzJ7z",
+      "قائمة التعاقدات أو الشراكات أو الاتفاقات مع دول أو منظمات أو مؤسسات دولية ووجود موافقة المركز الوطني عليه": "https://drive.google.com/drive/folders/1WXs0tDp0dp8dhOqA8U5CF0A2C3WQMxdP"
+    }
+  },
+  {
+    "name": "أصحاب المصلحة والشفافية",
+    "desc": "الشكاوى والمقترحات واستبانات الرضا والتواصل وحفظ السجلات",
+    "icon": "chat",
+    "items": {
+      "موقع الملفات والسجلات والمستندات داخل مقر الجمعية": "https://drive.google.com/drive/folders/10rcvyxQHIGC1dmON5zd3hYOXoDOMF8m-",
+      "سجل الاستفسارات أو المقترحات أو الشكاوى التي تم أو يتم معالجتها": "https://drive.google.com/drive/folders/1j_Uhw4NOQROztiHddTB4hB2W8Oiyg-yn",
+      "استبانات قياس رضا أصحاب العالقة والقرارات المتخذة بخصوصها من مجلس الإدارة": "https://drive.google.com/drive/folders/16VSslMYcUJEtOJb1MiT6f7NbTTlYoJv5",
+      "تقارير التواصل مع المستهدفين لأبلاغه عند نشر أو تحديث الأنظمة أو اللوائح أو السياسات": "https://drive.google.com/drive/folders/1G4xgqJ5EvmuthIrlx5BvuSdSe7mDf8Y_"
+    }
+  }
+];
+
+  var ICONS={
+    scale:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 7l3-4 3 4M3 7a3 3 0 1 0 6 0M15 7l3-4 3 4M15 7a3 3 0 1 0 6 0M8 21h8"/></svg>',
+    people:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>',
+    board:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>',
+    user:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+    doc:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>',
+    money:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+    shield:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>',
+    chart:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+    globe:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>',
+    chat:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l2-5.2a8.4 8.4 0 0 1-.9-3.8 8.4 8.4 0 0 1 8.4-8.5 8.4 8.4 0 0 1 8.5 8Z"/></svg>'
+  };
+  var FOLDER_IC='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2Z"/></svg>';
+  var OPEN_IC='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>';
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  var govTabs=document.getElementById('govTabs'),govMain=document.getElementById('govMain');
+  DOC_FOLDERS.forEach(function(sec,i){
+    var names=Object.keys(sec.items);
+
+    var tab=document.createElement('button');
+    tab.className='gov-tab';tab.type='button';tab.setAttribute('role','tab');
+    tab.setAttribute('aria-selected',i===0?'true':'false');
+    tab.dataset.tab='gov-pane-'+i;
+    tab.innerHTML=(ICONS[sec.icon]||ICONS.doc)+esc(sec.name)+'<span class="n">'+names.length+'</span>';
+    govTabs.appendChild(tab);
+
+    var pane=document.createElement('div');
+    pane.className='gov-pane';pane.id='gov-pane-'+i;
+    if(i!==0)pane.hidden=true;
+    pane.innerHTML='<div class="gm-head"><h3>'+esc(sec.name)+'</h3><p>'+esc(sec.desc)+'</p></div>'+
+      '<div class="file-list">'+names.map(function(n){
+        return '<div class="file"><span class="fic">'+FOLDER_IC+'</span>'+
+               '<span class="meta"><b>'+esc(n)+'</b></span>'+
+               '<span class="acts"><a class="fbtn dl" href="'+esc(sec.items[n])+'" target="_blank" rel="noopener">فتح المجلد'+OPEN_IC+'</a></span></div>';
+      }).join('')+'</div>';
+    govMain.appendChild(pane);
+  });
+
+  var tabs=govTabs.querySelectorAll('.gov-tab');
   tabs.forEach(function(t){
     t.addEventListener('click',function(){
       tabs.forEach(function(x){x.setAttribute('aria-selected','false')});
       t.setAttribute('aria-selected','true');
-      document.querySelectorAll('.gov-pane').forEach(function(p){p.hidden=true});
+      govMain.querySelectorAll('.gov-pane').forEach(function(p){p.hidden=true});
       document.getElementById(t.dataset.tab).hidden=false;
+      govMain.querySelector('.file-list').scrollTop=0;
     });
   });
 
