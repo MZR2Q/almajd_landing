@@ -223,14 +223,14 @@ section.sec{padding-block:84px}
 /* ===== الحوكمة والشفافية ===== */
 .gov{position:relative}
 .gov-frame{display:grid;grid-template-columns:270px minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg)}
-.gov-side{background:linear-gradient(170deg,var(--hero-a),var(--hero-b));color:var(--on-hero);padding:30px 0;display:flex;flex-direction:column}
+.gov-side{background:var(--ground-2);border-inline-end:1px solid var(--line);color:var(--ink);padding:30px 0;display:flex;flex-direction:column}
 .gov-side .hd{padding-inline:24px;margin-bottom:18px}
-.gov-side .hd b{font-family:'Reem Kufi','Cairo',sans-serif;font-size:1.1rem;color:var(--gold)}
-.gov-side .hd p{font-size:.78rem;color:var(--on-hero-dim);margin-top:4px}
-.gov-tab{display:flex;align-items:center;gap:12px;padding:14px 24px;background:none;border:none;color:var(--on-hero-dim);font-weight:700;font-size:.92rem;text-align:right;border-inline-start:3px solid transparent;transition:.18s;width:100%}
-.gov-tab .n{margin-inline-start:auto;background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold);border-radius:999px;font-size:.7rem;padding:1px 9px;font-weight:800;font-variant-numeric:tabular-nums}
-.gov-tab:hover{color:#fff;background:rgba(255,255,255,.05)}
-.gov-tab[aria-selected="true"]{color:#fff;background:rgba(255,255,255,.07);border-inline-start-color:var(--gold)}
+.gov-side .hd b{font-family:'Reem Kufi','Cairo',sans-serif;font-size:1.1rem;color:var(--brand)}
+.gov-side .hd p{font-size:.78rem;color:var(--ink-2);margin-top:4px}
+.gov-tab{display:flex;align-items:center;gap:12px;padding:14px 24px;background:none;border:none;color:var(--ink-2);font-weight:700;font-size:.92rem;text-align:right;border-inline-start:3px solid transparent;transition:.18s;width:100%}
+.gov-tab .n{margin-inline-start:auto;background:color-mix(in srgb,var(--brand) 10%,transparent);color:var(--brand);border-radius:999px;font-size:.7rem;padding:1px 9px;font-weight:800;font-variant-numeric:tabular-nums}
+.gov-tab:hover{color:var(--brand);background:color-mix(in srgb,var(--brand) 5%,transparent)}
+.gov-tab[aria-selected="true"]{color:var(--brand);background:#fff;border-inline-start-color:var(--gold);box-shadow:0 2px 10px -4px rgba(8,51,44,.12)}
 .gov-tab svg{flex-shrink:0;opacity:.85}
 .gov-main{padding:30px 30px 34px;min-height:430px}
 .gov-main .gm-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:6px;flex-wrap:wrap}
@@ -251,12 +251,10 @@ section.sec{padding-block:84px}
 .fbtn:hover{color:var(--brand);border-color:var(--brand)}
 .fbtn.dl{background:var(--brand);border-color:var(--brand);color:#fff}
 .fbtn.dl:hover{background:var(--brand-deep);border-color:var(--brand-deep);color:#fff}
-.gov-note{display:flex;gap:10px;align-items:center;margin-top:22px;font-size:.78rem;color:var(--ink-2);background:color-mix(in srgb,var(--gold) 9%,transparent);border:1px dashed color-mix(in srgb,var(--gold) 45%,transparent);border-radius:12px;padding:10px 16px}
-.gov-note svg{color:var(--gold-strong);flex-shrink:0}
 @media(max-width:860px){
   .gov-frame{grid-template-columns:minmax(0,1fr)}
   .gov-side,.gov-main{min-width:0}
-  .gov-side{flex-direction:column;padding:18px 0 8px}
+  .gov-side{flex-direction:column;padding:14px 0 0;border-inline-end:none;border-bottom:1px solid var(--line)}
   .gov-side .tabs{display:flex;overflow-x:auto;padding-inline:14px;gap:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .gov-side .tabs::-webkit-scrollbar{display:none}
   .gov-tab{border-inline-start:none;border-bottom:3px solid transparent;white-space:nowrap;width:auto;padding:11px 14px}
@@ -318,6 +316,9 @@ section.sec{padding-block:84px}
 
 /* البرامج والأخبار */
 .news-date{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;color:var(--gold-strong);font-weight:800}
+/* فريم صورة فارغ (placeholder) */
+.ph{aspect-ratio:16/9;background:var(--ground-2);border-bottom:1px solid var(--line);display:grid;place-items:center;color:#AFBFB7}
+.ph svg{width:36px;height:36px}
 .link-more{display:inline-flex;align-items:center;gap:8px;color:var(--brand);font-weight:800;font-size:.88rem;transition:gap .2s}
 .link-more:hover{gap:12px}
 
@@ -360,6 +361,52 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
 .to-top{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink-2);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.25s}
 .to-top.show{opacity:1;pointer-events:auto}
 .to-top:hover{color:var(--brand);border-color:var(--brand)}
+
+/* ===== تصغير المحتوى على الجوال ===== */
+@media(max-width:640px){
+  body{font-size:14.5px;line-height:1.7}
+  .hero h1{font-size:clamp(1.5rem,6.4vw,1.9rem)}
+  .hero .lead{font-size:.88rem;margin-bottom:24px}
+  .kicker{font-size:.72rem}
+  .btn{padding:10px 18px;font-size:.84rem}
+  .sec-head h2{font-size:1.3rem}
+  .sec-head p{font-size:.84rem}
+  .stat{padding:15px 8px}
+  .stat .n{font-size:1.3rem}
+  .stat .t{font-size:.7rem}
+  .svc{padding:16px 10px;gap:8px}
+  .svc .ic{width:42px;height:42px}
+  .svc b{font-size:.76rem}
+  .val{padding:16px}
+  .val h3{font-size:.92rem}
+  .val p{font-size:.78rem}
+  .pcard h3{font-size:.95rem}
+  .pcard .desc{font-size:.8rem}
+  .pcard .body{padding:16px;gap:11px}
+  .pcard .thumb{height:120px}
+  .chip{padding:6px 15px;font-size:.78rem}
+  /* قسم المرفقات — أصغر وأرتب على الجوال */
+  .gov-side .hd{padding-inline:16px;margin-bottom:10px}
+  .gov-side .hd b{font-size:.95rem}
+  .gov-side .hd p{font-size:.7rem}
+  .gov-tab{font-size:.78rem;padding:9px 12px;gap:8px}
+  .gov-tab svg{width:14px;height:14px}
+  .gov-tab .n{font-size:.62rem;padding:1px 7px}
+  .gov-main{padding:16px 12px}
+  .gov-main h3{font-size:.98rem}
+  .gov-main .gm-head p{font-size:.74rem}
+  .file{padding:10px 12px;gap:10px;border-radius:11px}
+  .file .fic{width:34px;height:34px;font-size:.52rem;border-radius:9px}
+  .file .meta b{font-size:.8rem;line-height:1.45}
+  .file .meta span{font-size:.66rem;gap:10px}
+  .fbtn{padding:6px 12px;font-size:.7rem;border-radius:8px}
+  .file-list{gap:9px;margin-top:14px}
+  .cta-banner h2{font-size:1.25rem}
+  .cta-banner p{font-size:.84rem}
+  .f-grid h4{font-size:.92rem}
+  .f-links a,.f-contact{font-size:.8rem}
+  .f-grid p{font-size:.8rem}
+}
 
 /* حركة الظهور */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
@@ -588,10 +635,6 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
             <div class="file"><span class="fic">PDF</span><span class="meta"><b>تقرير المراجع الخارجي 1446هـ</b><span><i>تاريخ النشر: 1447/02/05هـ</i><i>1.6 MB</i><i>305 تنزيلات</i></span></span><span class="acts"><button class="fbtn">معاينة</button><button class="fbtn dl">تحميل</button></span></div>
           </div>
         </div>
-        <div class="gov-note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          سيتم ربط هذا القسم بلوحة تحكم لرفع الملفات وإدارة التصنيفات — الملفات المعروضة تجريبية للنموذج.
-        </div>
       </div>
     </div>
   </div>
@@ -710,19 +753,19 @@ footer{background:var(--brand-ink);color:var(--on-hero-dim);margin-top:84px}
       <a class="link-more" href="#">جميع الأخبار<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
     </div>
     <div class="cards rv">
-      <article class="pcard"><div class="body" style="gap:9px">
+      <article class="pcard"><div class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div><div class="body" style="gap:9px">
         <span class="news-date num">1447/04/02هـ</span>
         <h3>توقيع اتفاقية شراكة مجتمعية جديدة</h3>
         <p class="desc">وقّعت الجمعية اتفاقية تعاون لدعم برامج التمكين الشبابي في حفر الباطن خلال العام القادم.</p>
         <a class="link-more" href="#">اقرأ الخبر<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
       </div></article>
-      <article class="pcard"><div class="body" style="gap:9px">
+      <article class="pcard"><div class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div><div class="body" style="gap:9px">
         <span class="news-date num">1447/03/21هـ</span>
         <h3>اختتام النسخة الثالثة من معسكر المهارات</h3>
         <p class="desc">تخرّج ٦٠ شاباً وفتاة من المعسكر الرقمي بمشاريع تخرج نوعية عرضت أمام لجنة التحكيم.</p>
         <a class="link-more" href="#">اقرأ الخبر<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
       </div></article>
-      <article class="pcard"><div class="body" style="gap:9px">
+      <article class="pcard"><div class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div><div class="body" style="gap:9px">
         <span class="news-date num">1447/03/08هـ</span>
         <h3>إطلاق مبادرة «عطاء المجد» التطوعية</h3>
         <p class="desc">انطلقت المبادرة بمشاركة ١٢٠ متطوعاً في أعمال مجتمعية شملت عدداً من أحياء المحافظة.</p>
