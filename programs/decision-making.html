@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>برنامج اتخاذ القرار — جمعية المجد الشبابية</title>
+<meta name="description" content="بناء قدرات المرشدين الطلابيين في مهارات اتخاذ القرار، وتمكينهم من نقل الأثر إلى طلابهم في مدارس المنطقة.">
+<style>
+@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(../static/fonts/cairo-arabic.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:'Cairo';font-style:normal;font-weight:200 1000;font-display:swap;src:url(../static/fonts/cairo-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
+@font-face{font-family:'Reem Kufi';font-style:normal;font-weight:400 700;font-display:swap;src:url(../static/fonts/reemkufi-arabic.woff2) format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC}
+:root{color-scheme:light;--brand:#5B4EA2;--brand-deep:#473C85;--green:#1F8A78;--green-deep:#186D5F;--mint:#67C8A4;
+--ink:#2F2E3A;--ink-2:#63626F;--ground:#FFF;--ground-2:#F8F8FB;--line:#E8E8F0;--r:14px;--shadow:0 6px 22px -14px rgba(46,39,88,.14)}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Cairo',system-ui,sans-serif;background:var(--ground);color:var(--ink);direction:rtl;text-align:right;line-height:1.85;font-size:16px;overflow-x:clip;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Reem Kufi','Cairo',sans-serif;line-height:1.5;margin:0;text-wrap:balance}
+p{margin:0}a{color:inherit;text-decoration:none}
+.wrap{max-width:960px;margin-inline:auto;padding-inline:22px}
+.num{font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:none;border-radius:var(--r);padding:12px 26px;font-weight:800;font-size:.92rem;transition:.18s;white-space:nowrap;cursor:pointer;font-family:inherit}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-deep)}
+.btn-outline{background:#fff;color:var(--brand);border:1.5px solid #CFCBE5}.btn-outline:hover{border-color:var(--brand)}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:14px;min-height:70px}
+header img{height:42px;width:auto;display:block}
+header .sp{margin-inline-start:auto;display:flex;gap:10px;align-items:center}
+header .back{font-size:.85rem;font-weight:800;color:var(--ink-2);display:inline-flex;align-items:center;gap:7px}
+header .back:hover{color:var(--brand)}
+@media(max-width:560px){header img{height:34px}header .back span{display:none}.btn{padding:10px 16px;font-size:.82rem}}
+.hero{background:var(--ground-2);border-bottom:1px solid var(--line);padding-block:56px}
+.hero .kicker{color:var(--green);font-weight:800;font-size:.8rem}
+.hero h1{font-size:clamp(1.7rem,4.5vw,2.6rem);color:var(--brand);margin-block:10px 14px}
+.hero p{color:var(--ink-2);max-width:65ch}
+section{padding-block:52px}
+section h2{font-size:1.35rem;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+section h2::before{content:"";width:26px;height:3px;border-radius:3px;background:var(--green)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+.info{padding:24px}
+.info .lbl{font-size:.78rem;font-weight:800;color:var(--green);margin-bottom:6px;display:block}
+.info p{font-size:.92rem;color:var(--ink-2)}
+.impact{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.imp{padding:26px;text-align:center}
+.imp .n{font-family:'Reem Kufi','Cairo',sans-serif;font-size:2.2rem;font-weight:700;color:var(--green)}
+.imp .t{font-size:.85rem;color:var(--ink-2);font-weight:700}
+ul.kpis{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+ul.kpis li{display:flex;gap:12px;align-items:flex-start;background:var(--ground-2);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:.9rem;color:var(--ink-2);font-weight:700}
+ul.kpis li::before{content:"✓";color:var(--green);font-weight:900;flex-shrink:0}
+.partners{display:flex;flex-wrap:wrap;gap:12px}
+.partner{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 22px;font-weight:800;font-size:.86rem;color:var(--ink-2)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ph{aspect-ratio:4/3;background:var(--ground-2);border:1px solid var(--line);border-radius:var(--r);display:grid;place-items:center;color:#B9B7CB}
+.ph svg{width:30px}
+@media(max-width:600px){.gallery{grid-template-columns:1fr 1fr}}
+.reg{padding:30px}
+.reg p.note{font-size:.85rem;color:var(--ink-2);margin-bottom:18px}
+.reg form{display:grid;grid-template-columns:1fr 1fr auto;gap:12px}
+.reg input{border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;font-family:inherit;font-size:.9rem;background:var(--ground-2)}
+.reg input:focus{outline:none;border-color:var(--green);background:#fff}
+@media(max-width:700px){.reg form{grid-template-columns:1fr}}
+footer{background:#312A5E;color:#C9C4E6;padding-block:26px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.8rem}
+footer .num{direction:ltr;unicode-bidi:embed}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="../index.html" aria-label="الرئيسية"><img src="../static/img/logo-lockup.png" alt="جمعية المجد الشبابية"></a>
+    <span class="sp">
+      <a class="back" href="../index.html#programs"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span>جميع البرامج</span></a>
+      <a class="btn btn-green" href="https://almajdyouth.com/" target="_blank" rel="noopener">ادعم الآن</a>
+    </span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">برامج جمعية المجد الشبابية</span>
+    <h1>برنامج اتخاذ القرار</h1>
+    <p>بناء قدرات المرشدين الطلابيين في مهارات اتخاذ القرار، وتمكينهم من نقل الأثر إلى طلابهم في مدارس المنطقة.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>عن البرنامج</h2>
+    <div class="grid2">
+      <div class="card info"><span class="lbl">الهدف</span><p>بناء قدرات المرشدين الطلابيين في مهارات اتخاذ القرار، وتمكينهم من نقل الأثر إلى طلابهم في مدارس المنطقة.</p></div>
+      <div class="card info"><span class="lbl">الفئة المستهدفة</span><p>المرشدون الطلابيون وطلاب المدارس</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>الأثر بالأرقام</h2>
+    <div class="impact"><div class="card imp"><div class="n num">30</div><div class="t">مرشداً تم تدريبهم</div></div><div class="card imp"><div class="n num">300</div><div class="t">طالب انعكس عليهم التدريب</div></div></div>
+  </section>
+
+  <section>
+    <h2>مؤشرات الأداء</h2>
+    <ul class="kpis"><li>عدد المرشدين المدربين</li><li>عدد الطلاب المستفيدين من أثر التدريب</li><li>قياس التحسن في مهارات اتخاذ القرار</li></ul>
+  </section>
+
+  <section>
+    <h2>الشركاء الداعمون</h2>
+    <div class="partners"><span class="partner">مؤسسة عبدالعزيز بن عبدالله الجميح الخيرية</span></div>
+  </section>
+
+  <section>
+    <h2>من البرنامج</h2>
+    <div class="gallery">
+      <div class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
+      <div class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
+      <div class="ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>التسجيل في البرنامج</h2>
+    <div class="card reg">
+      <p class="note">سجّل بياناتك وسيتواصل معك فريق الجمعية لتأكيد التسجيل في النسخة القادمة من البرنامج.</p>
+      <form onsubmit="event.preventDefault();var n=this.n.value.trim(),p=this.p.value.trim();if(!n||!p)return;window.open('https://wa.me/966551679049?text='+encodeURIComponent('التسجيل في برنامج اتخاذ القرار%0Aالاسم: '+n+'%0Aالجوال: '+p),'_blank')">
+        <input name="n" type="text" placeholder="الاسم الكامل" required>
+        <input name="p" type="tel" placeholder="رقم الجوال" required>
+        <button class="btn btn-green" type="submit">إرسال طلب التسجيل</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© <span class="num">2026م</span> جمعية المجد الشبابية</span>
+    <span>ترخيص رقم <span class="num">1000567000</span> — <span class="num">0551679049</span></span>
+  </div>
+</footer>
+</body>
+</html>
