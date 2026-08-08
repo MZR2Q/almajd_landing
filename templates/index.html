@@ -704,6 +704,7 @@ footer{background:#312A5E;color:#C9C4E6;margin-top:0}
     "desc": "القوائم والتقارير المالية والهيكل المالي والصلاحيات المالية",
     "icon": "money",
     "items": {
+      "القوائم المالية المدققة مع تقرير المراجع المستقل — 31 ديسمبر 2025م": "https://mzr2q.github.io/almajd_landing/files/financial-statements-2025.pdf",
       "موافقة المركز الوطني على الصالحيات المالية": "https://drive.google.com/drive/folders/10QJtsDNQV3aN7QEiXjDv48t_0LOYpmhv",
       "خطاب تعيين المحاسب للمركز الوطني": "https://drive.google.com/drive/folders/112aSU1BEhrO2BIQsyzjQnzzBxPkVNJGL",
       "مؤهلات المشرف المالي (المدير المالي)": "https://drive.google.com/drive/folders/114IfFiOXTPyp9aruCpTqbVYrrJ8S2SFc",
@@ -799,6 +800,7 @@ footer{background:#312A5E;color:#C9C4E6;margin-top:0}
     shield:'<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>',
     board:'<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>'
   };
+  var DOC_IC='<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>';
   var FOLDER_IC='<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2Z"/></svg>';
   var OPEN_IC='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>';
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -819,8 +821,9 @@ footer{background:#312A5E;color:#C9C4E6;margin-top:0}
       c.classList.add('on');
       gpTitle.textContent=sec.name;
       gpList.innerHTML=names.map(function(n){
-        return '<div class="file"><span class="fic">'+FOLDER_IC+'</span><b>'+esc(n)+'</b>'+
-               '<a class="fbtn" href="'+esc(sec.items[n])+'" target="_blank" rel="noopener">فتح المجلد '+OPEN_IC+'</a></div>';
+        var u=sec.items[n],isFolder=/drive\.google\.com/.test(u);
+        return '<div class="file"><span class="fic">'+(isFolder?FOLDER_IC:DOC_IC)+'</span><b>'+esc(n)+'</b>'+
+               '<a class="fbtn" href="'+esc(u)+'" target="_blank" rel="noopener">'+(isFolder?'فتح المجلد ':'عرض ')+OPEN_IC+'</a></div>';
       }).join('');
       panel.classList.add('show');
       gpList.scrollTop=0;
