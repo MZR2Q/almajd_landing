@@ -136,6 +136,18 @@ section.sec{padding-block:96px}
 .valc span{font-size:.78rem;color:var(--ink-2);line-height:1.6;display:block}
 @media(max-width:900px){.vm-grid{grid-template-columns:1fr}.vals-row{grid-template-columns:repeat(2,1fr)}.valc:last-child{grid-column:span 2}}
 
+/* أهداف الجمعية */
+.goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.goal{padding:22px 20px;display:flex;gap:14px;align-items:flex-start}
+.goal .no{
+  width:38px;height:38px;flex-shrink:0;border-radius:11px;display:grid;place-items:center;
+  background:#EFF7F4;color:var(--green);font-family:'Reem Kufi','Cairo',sans-serif;
+  font-weight:700;font-size:1rem;font-variant-numeric:tabular-nums;
+}
+.goal p{font-size:.9rem;color:var(--ink-2);font-weight:700;line-height:1.8;margin:0;padding-top:4px}
+@media(max-width:960px){.goals-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.goals-grid{grid-template-columns:1fr}.goal{padding:16px}}
+
 /* الإنجازات */
 .ach{background:var(--green);color:#fff}
 .ach .kicker{color:#CDEFE3}
@@ -283,7 +295,7 @@ footer{background:#312A5E;color:#C9C4E6;margin-top:0}
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="scrim" id="scrim"></div>
   <div class="panel" role="dialog" aria-label="القائمة">
-    <a href="#about">عن الجمعية</a><a href="#achievements">إنجازاتنا</a><a href="#programs">البرامج</a>
+    <a href="#about">عن الجمعية</a><a href="#goals">أهداف الجمعية</a><a href="#achievements">إنجازاتنا</a><a href="#programs">البرامج</a>
     <a href="#governance">الحوكمة والشفافية</a><a href="#news">الأخبار</a><a href="#support">طرق الدعم</a><a href="#contact">التواصل</a>
     <a class="btn btn-green" href="https://almajdyouth.com/" target="_blank" rel="noopener">ادعم الآن</a>
   </div>
@@ -353,6 +365,28 @@ footer{background:#312A5E;color:#C9C4E6;margin-top:0}
       <div class="card valc"><b>الالتزام</b><span>خدمات ذات جودة عالية</span></div>
       <div class="card valc"><b>التعاون</b><span>روح الفريق والشراكات المجتمعية</span></div>
       <div class="card valc"><b>المسؤولية</b><span>غرس حس المسؤولية الاجتماعية</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ أهداف الجمعية (المادة الخامسة من اللائحة الأساسية) ═══ -->
+<section class="sec" id="goals">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="kicker">أهداف الجمعية — المادة الخامسة من اللائحة الأساسية</span>
+      <h2>تسعة أهداف.. نعمل لأجلها</h2>
+    </div>
+    <div class="goals-grid">
+      <div class="card goal"><span class="no num">1</span><p>المساهمة في تقديم البرامج والمبادرات لاستثمار أوقات الشباب بشكل إيجابي</p></div>
+      <div class="card goal"><span class="no num">2</span><p>تقديم الاستشارات الشخصية والمهنية والسلوكية والاجتماعية للشباب</p></div>
+      <div class="card goal"><span class="no num">3</span><p>تفعيل دور الشباب في بناء وتنمية المجتمع</p></div>
+      <div class="card goal"><span class="no num">4</span><p>تعزيز القيم والسلوك الإيجابي لدى الشباب</p></div>
+      <div class="card goal"><span class="no num">5</span><p>تعزيز القدرات الشبابية على الاعتماد على الذات والتنمية الشخصية</p></div>
+      <div class="card goal"><span class="no num">6</span><p>تطوير قدرات شباب المجتمع في التواصل الحضاري</p></div>
+      <div class="card goal"><span class="no num">7</span><p>تشجيع ودعم المبادرات الشبابية</p></div>
+      <div class="card goal"><span class="no num">8</span><p>تحصين الشباب من الأفكار المتطرفة والسلوكيات المنحرفة</p></div>
+      <div class="card goal"><span class="no num">9</span><p>الاهتمام بالقضايا الاجتماعية التي تمس الشباب</p></div>
     </div>
   </div>
 </section>
@@ -566,6 +600,7 @@ footer{background:#312A5E;color:#C9C4E6;margin-top:0}
         <h4>روابط سريعة</h4>
         <div class="f-links">
           <a href="#about">عن الجمعية</a>
+          <a href="#goals">أهداف الجمعية</a>
           <a href="#achievements">إنجازاتنا</a>
           <a href="#programs">البرامج</a>
           <a href="#news">الأخبار</a>
